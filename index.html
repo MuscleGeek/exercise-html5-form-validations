@@ -28,35 +28,35 @@
                 <div class="row">
                 <div class="col12 col-md-4 mb-3">
                     <label for="tarjeta" class="form-label">Tarjeta#</label>
-                    <input type="text" class="form-control" id="Tarjeta" maxlength="13" placeholder="xxxxxxxxxxxxx" name="nTarjeta">
+                    <input type="text" class="form-control" id="tarjeta" maxlength="13" placeholder="xxxxxxxxxxxxx" name="nTarjeta">
                 </div>
                 <div class="col12 col-md-2 mb-3">
                     <label for="cvc" class="form-label"ddd>CVC#</label>
-                    <input type="text" class="form-control" id="CVC" placeholder="0000" name="nCVC">
+                    <input type="text" class="form-control" id="cvc" placeholder="0000" pattern="^\d{1,3}$" name="nCVC">
                 </div>
                 <div class="col12 col-md-4 mb-3">
                     <label for="monto" class="form-label"><i class=""></i>Monto</label>
-                    <input type="text" class="form-control" id="Monto" name="nMonto">
+                    <input type="text" class="form-control" id="monto" name="nMonto">
                 </div>
               </div>
               <div class="row">
               <div class="col12 col-md-6 mb-3">
                   <label for="nombre" class="form-label">Nombre</label>
-                  <input type="text" class="form-control" id="Nombre" name="nNombre">
+                  <input type="text" class="form-control" id="nombre" name="nNombre">
                 </div>
                 <div class="col12 col-md-6 mb-3">
-                    <label for="apellidos" class="form-label">Apellidos</label>
-                    <input type="text" class="form-control" id="Apellidos" name="nApellidos">
+                    <label for="apellido" class="form-label">Apellidos</label>
+                    <input type="text" class="form-control" id="apellido" name="nApellidos">
                 </div>
               </div>
               <div class="row">
               <div class="col12 col-md-4 mb-3">
                   <label for="ciudad" class="form-label">Ciudad</label>
-                  <input type="text" class="form-control" id="Ciudad" name="nCiudad">
+                  <input type="text" class="form-control" id="ciudad" name="nCiudad">
               </div>
               <div class="col12 col-md-3 mb-3">
                   <label class="form-label">State</label>
-                  <select class="form-select" aria-label="Select Province" id="Provincia" name="nProvincia">
+                  <select class="form-select" aria-label="Select Province" id="provincia" name="nProvincia">
                   <option disabled>Select Province</option>
                   <option value="1">Alajuela</option>
                   <option value="2">Heredia</option>
@@ -68,8 +68,7 @@
               </div>
               <div class="col12 col-md-4 mb-3">
                   <label for="zip" class="form-label">Código Postal</label>
-                  <input type="text" class="form-control" id="zip" aria-describedby="Type your eMail" name="nZip">
-
+                  <input type="text" class="form-control" id="zip"  min="5" max="5" aria-describedby="Type your zip" name="nZip">
               </div>
               </div>
             <!------------------TEXT AREA ----------->
@@ -90,8 +89,8 @@
                 </div>
                 </div>
                   <div class="col12 col-md-8 mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Message</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+                    <label for="messageText" class="form-label">Message</label>
+                    <textarea class="form-control" id="messageText" rows="5"></textarea>
                 </div>
               </div>
               </div>
@@ -102,7 +101,7 @@
     <div class="container-fluid  d-flex justify-content-end" style="background: lightgray;">
         <div class="row">
         <div class="col12 col-md-12">
-            <input class="btn btn-secondary" type="button" name="cancel" id="cancel" value="Cancel">
+            <input class="btn btn-secondary" type="button" name="cancel" id="cancel" value="cancel">
             <input class="btn btn-success" type="submit" name="Submit" value="Send">
         </div>
         </div>
