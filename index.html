@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+    <link rel="stylesheet" href="validator.js">
+    <title>Title</title>
+</head>
+<body style="background-color: black;">
+    <div class="container mx-fixed py-2" style="background: white;">
+    <header>
+        <div class="container">
+            <div class="row" style="background: lightgray;">
+                <div class="col-lg-8 mb-2">
+                    <h4>Bootstrap Payment Forms</h4>
+                </div>
+            </div> <!-- END Header ---->
+        </div>
+    </header>
+    <main>
+        <div class="container mx-auto" style="background: white;">
+            <form>
+                <div class="row">
+                <div class="col12 col-md-12 alert alert-danger mb-3" role="alert" id="formResult">
+                    <strong>Algunos campos están vacíos o incompletos </strong>
+                </div>
+                <div class="row">
+                <div class="col12 col-md-4 mb-3">
+                    <label for="tarjeta" class="form-label">Tarjeta#</label>
+                    <input type="text" class="form-control" id="Tarjeta" maxlength="13" placeholder="xxxxxxxxxxxxx" name="nTarjeta">
+                </div>
+                <div class="col12 col-md-2 mb-3">
+                    <label for="cvc" class="form-label"ddd>CVC#</label>
+                    <input type="text" class="form-control" id="CVC" placeholder="0000" name="nCVC">
+                </div>
+                <div class="col12 col-md-4 mb-3">
+                    <label for="monto" class="form-label"><i class=""></i>Monto</label>
+                    <input type="text" class="form-control" id="Monto" name="nMonto">
+                </div>
+              </div>
+              <div class="row">
+              <div class="col12 col-md-6 mb-3">
+                  <label for="nombre" class="form-label">Nombre</label>
+                  <input type="text" class="form-control" id="Nombre" name="nNombre">
+                </div>
+                <div class="col12 col-md-6 mb-3">
+                    <label for="apellidos" class="form-label">Apellidos</label>
+                    <input type="text" class="form-control" id="Apellidos" name="nApellidos">
+                </div>
+              </div>
+              <div class="row">
+              <div class="col12 col-md-4 mb-3">
+                  <label for="ciudad" class="form-label">Ciudad</label>
+                  <input type="text" class="form-control" id="Ciudad" name="nCiudad">
+              </div>
+              <div class="col12 col-md-3 mb-3">
+                  <label class="form-label">State</label>
+                  <select class="form-select" aria-label="Select Province" id="Provincia" name="nProvincia">
+                  <option disabled>Select Province</option>
+                  <option value="1">Alajuela</option>
+                  <option value="2">Heredia</option>
+                  <option value="3">Guanacaste</option>
+                  <option value="3">San José</option>
+                  <option value="3">Limón</option>
+                  <option value="3">Puntarenas</option>
+                  </select>
+              </div>
+              <div class="col12 col-md-4 mb-3">
+                  <label for="zip" class="form-label">Código Postal</label>
+                  <input type="text" class="form-control" id="zip" aria-describedby="Type your eMail" name="nZip">
+
+              </div>
+              </div>
+            <!------------------TEXT AREA ----------->
+              <div class="row d-flex justify-content-between">
+                  <label>Aceptamos:</label>
+                  <div class="col12 col-md-4 mb-3">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                        <label class="form-check-label" for="inlineRadio1"><i class="fab fa-cc-mastercard"></i></label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                        <label class="form-check-label" for="inlineRadio2"><i class="fab fa-cc-visa"></i></label>
+                    </div>
+                <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                        <label class="form-check-label" for="inlineRadio3"><i class="fab fa-cc-diners-club"></i></label>
+                </div>
+                </div>
+                  <div class="col12 col-md-8 mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Message</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+                </div>
+              </div>
+              </div>
+            
+        </div>
+    </main>
+    <footer>
+    <div class="container-fluid  d-flex justify-content-end" style="background: lightgray;">
+        <div class="row">
+        <div class="col12 col-md-12">
+            <input class="btn btn-secondary" type="button" name="cancel" id="cancel" value="Cancel">
+            <input class="btn btn-success" type="submit" name="Submit" value="Send">
+        </div>
+        </div>
+    </div>
+    </footer>
+    </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+</body>
+</html>
