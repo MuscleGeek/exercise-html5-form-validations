@@ -5,7 +5,7 @@
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
     <link rel="stylesheet" href="validator.js">
-    <title>Title</title>
+    <title>JS FORM VALIDATION</title>
 </head>
 <body style="background-color: black;">
     <div class="container mx-fixed py-2" style="background: white;">
@@ -20,42 +20,42 @@
     </header>
     <main>
         <div class="container mx-auto" style="background: white;">
-            <form>
+            <form id="myForm" onsubmit="return false" action="#">
                 <div class="row">
-                <div class="col12 col-md-12 alert alert-danger mb-3" role="alert" id="formResult">
-                    <strong>Algunos campos están vacíos o incompletos </strong>
+                <div id="advice" class="col12 col-md-12 alert alert-danger mb-3" role="alert" id="formResult">
+                        <span></span>
                 </div>
                 <div class="row">
                 <div class="col12 col-md-4 mb-3">
                     <label for="tarjeta" class="form-label">Tarjeta#</label>
-                    <input type="text" class="form-control" id="tarjeta" maxlength="13" placeholder="xxxxxxxxxxxxx" name="nTarjeta">
+                    <input type="text" class="form-control" id="tarjeta" maxlength="16" placeholder="xxxxxxxxxxxxx" name="nTarjeta">
                 </div>
                 <div class="col12 col-md-2 mb-3">
                     <label for="cvc" class="form-label"ddd>CVC#</label>
-                    <input type="text" class="form-control" id="cvc" placeholder="0000" pattern="^\d{1,3}$" name="nCVC">
+                    <input type="text" class="form-control" id="cvc" placeholder="0000" maxlength="4" name="nCVC">
                 </div>
                 <div class="col12 col-md-4 mb-3">
                     <label for="monto" class="form-label"><i class=""></i>Monto</label>
-                    <input type="text" class="form-control" id="monto" name="nMonto">
+                    <input type="text" class="form-control" id="monto" placeholder="type mount">
                 </div>
               </div>
               <div class="row">
               <div class="col12 col-md-6 mb-3">
                   <label for="nombre" class="form-label">Nombre</label>
-                  <input type="text" class="form-control" id="nombre" name="nNombre">
+                  <input type="text" class="form-control" id="nombre">
                 </div>
                 <div class="col12 col-md-6 mb-3">
                     <label for="apellido" class="form-label">Apellidos</label>
-                    <input type="text" class="form-control" id="apellido" name="nApellidos">
+                    <input type="text" class="form-control" id="apellido">
                 </div>
               </div>
               <div class="row">
               <div class="col12 col-md-4 mb-3">
                   <label for="ciudad" class="form-label">Ciudad</label>
-                  <input type="text" class="form-control" id="ciudad" name="nCiudad">
+                  <input type="text" class="form-control" id="ciudad">
               </div>
               <div class="col12 col-md-3 mb-3">
-                  <label class="form-label">State</label>
+                  <label class="form-label">Provincia</label>
                   <select class="form-select" aria-label="Select Province" id="provincia" name="nProvincia">
                   <option disabled>Select Province</option>
                   <option value="1">Alajuela</option>
@@ -83,10 +83,14 @@
                         <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
                         <label class="form-check-label" for="inlineRadio2"><i class="fab fa-cc-visa"></i></label>
                     </div>
-                <div class="form-check form-check-inline">
+                    <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
                         <label class="form-check-label" for="inlineRadio3"><i class="fab fa-cc-diners-club"></i></label>
-                </div>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4">
+                        <label class="form-check-label" for="inlineRadio4"><i class="fab fa-cc-apple-pay"></i></label>
+                    </div>
                 </div>
                   <div class="col12 col-md-8 mb-3">
                     <label for="messageText" class="form-label">Message</label>
@@ -101,14 +105,63 @@
     <div class="container-fluid  d-flex justify-content-end" style="background: lightgray;">
         <div class="row">
         <div class="col12 col-md-12">
-            <input class="btn btn-secondary" type="button" name="cancel" id="cancel" value="cancel">
-            <input class="btn btn-success" type="submit" name="Submit" value="Send">
+            <button class="btn btn-secondary" type="button" name="cancel" id="cancel">Cancel</button>
+            <button class="btn btn-success" type="submit" name="send" id="submit">Send</button>
         </div>
         </div>
     </div>
     </footer>
     </form>
     </div>
+    <section id="ShowValidationData" class="text-dark m-1 mt-5 pb-5">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Información Suministrada</h2>
+                    </div>
+                    <div class="card-body">
+                        <div id="vCard">
+                            <label for="inlineFormInput"><strong>Card: #</strong></label>
+                            <span></span>
+                        </div>
+                        <div id="vCVC">
+                            <label for="inlineFormInput"><strong>CVC: #</strong></label>
+                            <span></span>
+                        </div>
+                        <div id="vAmount">
+                            <label for="inlineFormInput"><strong>Amount: $</strong></label>
+                            <span></span>
+                        </div>
+                        <div id="vFirstName">
+                            <label for="inlineFormInput"><strong>First Name: </strong></label>
+                            <span></span>
+                        </div>
+                        <div id="vLastName">
+                            <label for="inlineFormInput"><strong>Last Name: </strong></label>
+                            <span></span>
+                        </div>
+                        <div id="vCity">
+                            <label for="inlineFormInput"><strong>City: </strong></label>
+                            <span></span>
+                        </div>
+                        <div id="vState">
+                            <label for="inlineFormInput"><strong>State: </strong></label>
+                            <span></span>
+                        </div>
+                        <div id="vZip">
+                            <label for="inlineFormInput"><strong>Postal Code: </strong></label>
+                            <span></span>
+                        </div>
+                        <div id="vCardSelector">
+                            <label for="inlineFormInput"><strong>Aceptamos: </strong></label>
+                            <span></span>
+                        </div>
+                        <div id="vMsgArea">
+                            <label for="inlineFormInput"><strong>Message: </strong></label>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 </body>
 </html>
