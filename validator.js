@@ -3,9 +3,10 @@ window.addEventListener('load', function () {
 
     let showResult = document.querySelector('#showValidationData'); //muestra la validación de los datos ingresados.
     showResult.style.display = "none";
-    let advicemsg = document.querySelector('#advice') //advice validation area
+    let advicemsg = document.querySelector('#advice'); //advice validation area
     advicemsg.style.display = "none";
     let getForm = document.querySelector('#myForm'); //id formulario
+
     getForm.addEventListener('submit', function () {
         /******FORM => BUTTON => SUBMIT */
 
